@@ -25,7 +25,7 @@ public class CategoryItemMap {
     private String itemId = UUID.randomUUID().toString();
 
 //   private String productCode;
-    private Set<String> imageUrl;
+    private String imageUrl;
      private String title;
     private String seller;
     private Set<String> size;
