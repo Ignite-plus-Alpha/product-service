@@ -20,7 +20,6 @@ public class CategoryItemMap {
     private String categoryId;
     @PrimaryKeyColumn(name = "groupId",ordinal = 0,type = PrimaryKeyType.CLUSTERED)
     private String groupId;
-//
     @PrimaryKeyColumn(name = "itemId",ordinal = 1,type = PrimaryKeyType.CLUSTERED)
     private String itemId = UUID.randomUUID().toString();
 
