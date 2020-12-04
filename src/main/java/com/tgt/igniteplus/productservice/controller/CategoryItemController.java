@@ -4,10 +4,10 @@ import com.tgt.igniteplus.productservice.model.CategoryItemMap;
 import com.tgt.igniteplus.productservice.service.CategoryItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -70,9 +70,9 @@ public class CategoryItemController {
 
 
     //save all items
-    @RequestMapping("/sort")
+    @RequestMapping(value = "/sort",method = PUT)
     public List<CategoryItemMap> sortByPrice(@RequestBody List<CategoryItemMap> categoryItemMaps,@RequestParam String criteria){
-//        System.out.println(categoryItemMaps);
+
         return categoryItemService.sortItemsByPrice(categoryItemMaps,criteria);
     }
 }
