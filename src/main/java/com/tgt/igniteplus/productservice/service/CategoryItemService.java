@@ -87,16 +87,6 @@ public class CategoryItemService {
         return filteredItem;
     }
 
-//    //add a list of items
-//    public List<CategoryItemMap> sortItemsByPrice(List<CategoryItemMap> categoryItemMaps){
-//
-//        Collections.sort(categoryItemMaps,new SortByPrice());
-//        for (CategoryItemMap item:categoryItemMaps
-//             ) {
-//            System.out.println(" price : "+ item.getPrice());
-//        }
-//        return categoryItemMaps;
-//    }
 
         public List<CategoryItemMap> sortItemsByPrice(List<CategoryItemMap> categoryItemMaps,String criteria){
         if(criteria.equals("price-inc"))

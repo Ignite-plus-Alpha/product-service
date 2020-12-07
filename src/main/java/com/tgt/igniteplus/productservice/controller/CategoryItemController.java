@@ -62,14 +62,9 @@ public class CategoryItemController {
     public CategoryItemMap getItemByGroupIdCategoryIdItemId(@PathVariable("groupId") String groupId,@PathVariable("categoryId") String categoryId,@PathVariable("itemId") String itemId){
         return categoryItemService.getItemByCatIdGrpIdItemId(groupId,categoryId,itemId);
     }
-//    @GetMapping("/items/sort")
-//    public List<CategoryItemMap> sortItems(List<CategoryItemMap> items){
-//
-//        return categoryItemService.sortItemList(items);
-//    }
 
 
-    //save all items
+    //sort
     @RequestMapping(value = "/sort",method = PUT)
     public List<CategoryItemMap> sortByPrice(@RequestBody List<CategoryItemMap> categoryItemMaps,@RequestParam String criteria){
 
