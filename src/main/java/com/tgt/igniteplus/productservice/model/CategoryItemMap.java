@@ -15,6 +15,7 @@ import java.util.*;
 @Table("category_item")
 public class CategoryItemMap {
 
+
     //in categoryId - out list of items in a particular category
     @PrimaryKeyColumn(name = "categoryId",ordinal = 0,type = PrimaryKeyType.PARTITIONED)
     private String categoryId;

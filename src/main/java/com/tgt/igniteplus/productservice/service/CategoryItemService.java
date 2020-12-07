@@ -6,10 +6,22 @@ import com.tgt.igniteplus.productservice.model.CategoryItemMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
+//class SortByPrice implements Comparator<CategoryItemMap>
+//{
+//    public int compare(CategoryItemMap a, CategoryItemMap b)
+//    {
+//        return (int) (a.getPrice() - b.getPrice());
+//    }
+//}
+class SortByPrice implements Comparator<CategoryItemMap>
+{
+    @Override
+    public int compare(CategoryItemMap obj1, CategoryItemMap obj2) {
+        return obj1.getPrice().compareTo(obj2.getPrice());
+    }
+}
 
 @Service
 public class CategoryItemService {
@@ -74,6 +86,20 @@ public class CategoryItemService {
         }
         return filteredItem;
     }
+
+
+        public List<CategoryItemMap> sortItemsByPrice(List<CategoryItemMap> categoryItemMaps,String criteria){
+        if(criteria.equals("price-inc"))
+        {
+            Collections.sort(categoryItemMaps,new SortByPrice());
+        }
+
+        else if(criteria.equals("price-dec")) {
+            Comparator<CategoryItemMap> cmp = Collections.reverseOrder(new SortByPrice());
+            Collections.sort(categoryItemMaps, cmp);
+            }
+            return categoryItemMaps;
+        }
 }
 
 
